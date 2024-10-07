@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>STEGANOGRAPHY</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='main.css' type='text/css' rel='stylesheet' />
+    <script src='sjcl.js' type='text/javascript'></script>
+</head>
+<body class='bg-dark text-white' class="bodyscroll">
+    <div class="container mt-5" style="height:600px !important">
+        <h1 class="text-center">IMAGE STEGANOGRAPHY</h1>
+        <div id='main' class='section dark'>
+            <div class='step'>Choose an image</div>
+            <div class='sectionbody'>
+                <input type='file' id='file' class='form-control-file my-3' />
+                <img id='preview' class='preview img-fluid' />
+            </div>
+        </div>
+        <div id='options' class='section dark mt-4 hide'>
+            <div class='step'>What do you want to do?</div>
+            <div class='sectionbody row'>
+                <div class='col-md-6'>
+                    <button id='showEncode' class='btn btn-primary btn-block'>Encode Message</button>
+                </div>
+                <div class='col-md-6'>
+                    <button id='showDecode' class='btn btn-primary btn-block'>Decode Message</button>
+                </div>
+            </div>
+        </div>
+        <div id='encodeSection' class='section dark hide mt-4'class='contscroll'>
+            <div class='step'>Hide a message</div>
+            <div class='sectionbody'>
+                <textarea id='message' class='form-control mb-3' maxlength='1000' placeholder='Type hidden message'></textarea>
+                <input type='password' id='password' class='form-control mb-3' placeholder='Password' />
+                <button id='encode' class='btn btn-primary btn-block'>Hide message</button>
+            </div>
+        </div>
+        <div id='decodeSection' class='section dark hide mt-4' >
+            <div class='step'>Reveal the message</div>
+            <div class='sectionbody'>
+                <input type='password' id='password2' class='form-control mb-3' placeholder='Password' />
+                <button id='decode' class='btn btn-primary btn-block'>Reveal message</button>
+            </div>
+        </div>
+        <div id='reveal' class='section dark hide mt-4'style="margin-top:150px !important">
+            <div class='step'>Hidden message</div>
+            <div id='messageDecoded' class='sectionbody'></div>
+        </div>
+        <canvas id='canvas' class='hide'></canvas>
+        <img id='output' class='img-fluid mt-3' width="600px" />
+        <a id="redirect" href="http://127.0.0.1:5500/index.html">Choose another file...</a>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
+    <script src='main.js' type='text/javascript'></script>
+</body>
+</html>
