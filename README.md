@@ -1,73 +1,55 @@
 # Image Steganography Web Application
 
-This project is an image steganography web application that allows users to embed secret messages within an image. After embedding the message, the user can protect the steganographic image with a password, which will be required for future extraction of the message.
+This project is a simple web application that allows users to embed secret messages within an image using steganography. After embedding the message, the user can protect it with a password to ensure secure extraction later.
 
 ## Features
 
-- **Image Upload**: Users can upload an image of their choice.
-- **Message Embedding**: Users can input a secret message to be hidden within the uploaded image.
-- **Password Protection**: After embedding the message, users can create a password to secure the image.
-- **Message Extraction**: With the correct password, the hidden message can be extracted from the steganographic image.
+- **Image Upload**: Users can upload an image file.
+- **Message Embedding**: The application hides a secret message within the image.
+- **Password Protection**: Users can set a password to protect the hidden message.
+- **Message Extraction**: The message can be extracted by re-uploading the image and entering the correct password.
 
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js (optional, based on your stack)
-- **Cryptography**: Using SJCL (Stanford JavaScript Crypto Library) for encryption and password handling.
+- **Cryptography**: SJCL (Stanford JavaScript Crypto Library)
 
 ## How It Works
 
 1. **Upload an Image**: Users choose an image from their device.
-2. **Enter a Message**: The user inputs the message they want to hide.
-3. **Create a Password**: The password ensures only authorized users can extract the message.
-4. **Download the Image**: The image with the embedded message can be downloaded.
-5. **Extract the Message**: To retrieve the message, the user reuploads the image and provides the correct password.
+2. **Enter a Message**: Users input the message they want to hide.
+3. **Create a Password**: The password is used to encrypt the message.
+4. **Embed the Message**: The image with the embedded message can be downloaded.
+5. **Extract the Message**: To retrieve the hidden message, the user re-uploads the image and provides the correct password.
+
+## File Structure
+
+- `index.html`: The main HTML file for the user interface.
+- `main.js`: The JavaScript file handling the steganography logic, image processing, and password encryption.
+- `main.css`: The stylesheet for styling the web page.
+- `sjcl.js`: The Stanford JavaScript Crypto Library used for encryption.
 
 ## Installation and Setup
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
+    git clone https://github.com/Sasuke-07/Image_Steg.git
     ```
 
-2. Navigate to the project directory:
-
-    ```bash
-    cd your-repo-name
-    ```
-
-3. Install the necessary dependencies (if applicable):
-
-    ```bash
-    npm install
-    ```
-
-4. Run the project locally:
-
-    ```bash
-    npm start
-    ```
-
-5. Open your browser and navigate to:
-
-    ```bash
-    http://localhost:3000
-    ```
+2. Open the `index.html` file in your browser to run the application locally.
 
 ## Usage
 
-1. Visit the main page.
-2. Upload your image and enter a secret message.
-3. Set a password for the image.
-4. Click the **Embed Message** button.
-5. Download the steganographic image.
-6. To extract the message, return to the site, upload the image, and provide the password.
+1. Upload an image from your device.
+2. Enter the message you want to hide.
+3. Set a password to encrypt the message.
+4. Click the **Embed Message** button to generate the steganographic image.
+5. To extract the message, upload the steganographic image and enter the password.
 
 ## Security
 
-- The embedded message is encrypted using the user's password, ensuring that only users with the correct password can extract the message.
-- The project uses the SJCL (Stanford JavaScript Crypto Library) for encryption and decryption.
+- The message is encrypted with the password using SJCL, ensuring that only those with the correct password can retrieve the message.
 
 ## Contributing
 
@@ -81,7 +63,7 @@ This project is an image steganography web application that allows users to embe
 3. Commit your changes:
 
     ```bash
-    git commit -m 'Add some feature'
+    git commit -m 'Add new feature'
     ```
 
 4. Push to the branch:
@@ -95,4 +77,3 @@ This project is an image steganography web application that allows users to embe
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
